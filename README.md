@@ -16,6 +16,26 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
+### Schema Validation
+
+``` shell
+# Check that the schemas in `schemas/` are valid
+$ yarn test:schemas
+
+# Check that the examples in `examples/` match the schemas in `schemas/`
+$ yarn test:examples
+```
+
+### Testing
+
+``` shell
+$ yarn ci
+# or 
+$ yarn format --check
+$ yarn typecheck
+$ yarn test
+```
+
 ### Build
 
 ```

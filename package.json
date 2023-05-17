@@ -16,7 +16,8 @@
     "typecheck": "tsc",
     "test": "jest",
     "test:schemas": "ajv compile -s \"schemas/com.*.json\" --spec=draft2020 -c ajv-formats --strict=true -r \"schemas/cloudevents.json\" -r \"schemas/glides-events-schema.json\"",
-    "test:examples": "ts-node src/scripts/validate_examples.ts"
+    "test:examples": "ts-node src/scripts/validate_examples.ts",
+    "ci": "yarn format --check && yarn typecheck && yarn test && yarn test:schemas && yarn test:examples"
   },
   "dependencies": {
     "@docusaurus/core": "2.4.0",

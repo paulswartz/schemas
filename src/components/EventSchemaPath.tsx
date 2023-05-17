@@ -13,7 +13,7 @@ const viewerOptions = {
 export default function EventSchemaPath(props: { event: object }): JSX.Element {
   const [error, setError] = useState(undefined);
   const [resolvedSchema, setResolvedSchema] = useState(undefined);
-  const schemaRoot = useBaseUrl("/schemas", {forcePrependBaseUrl: true});
+  const schemaRoot = useBaseUrl("/schemas", { forcePrependBaseUrl: true });
   useEffect(() => {
     fetch(`${schemaRoot}/${props.event}.json`)
       .then((result) => result.json())
