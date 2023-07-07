@@ -4,21 +4,36 @@
   "description": "Editors Changed",
   "type": "object",
   "properties": {
-    "type": { "const": "com.ctd.glides.editors_changed.v1.json" },
+    "type": { "const": "com.mbta.ctd.glides.editors_changed.v1" },
     "specversion": { "const": "1.0" },
-    "source": { "const": "glides.mbta.com" },
-    "id": { "$ref": "cloudevents.json#/properties/id" },
-    "time": { "$ref": "glides-events-schema.json#/$defs/timestamp" },
+    "source": { "$ref": "glides-events.json#/properties/source" },
+    "id": { "$ref": "glides-events.json#/properties/id" },
+    "time": { "$ref": "glides-events.json#/$defs/timestamp" },
     "data": {
       "type": "object",
       "properties": {
-        "metadata": { "$ref": "glides-events-schema.json#/$defs/metadata" },
+        "metadata": { "$ref": "glides-events.json#/$defs/metadata" },
         "changes": {
-          "$ref": "glides-events-schema.json#/$defs/editors_changed_v1/properties/changes"
+          "type": "array",
+          "items": { "$ref": "#/$defs/editor_change" }
         }
       },
       "required": ["metadata", "changes"]
     }
   },
-  "required": ["type", "specversion", "source", "id", "time", "data"]
+  "required": ["type", "specversion", "source", "id", "time", "data"],
+  "$defs": {
+    "editor_change": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "oneOf": [{ "const": "start" }, { "const": "stop" }]
+        },
+        "location": { "$ref": "glides-events.json#/$defs/location" },
+        "editor": { "$ref": "glides-events.json#/$defs/glides_user" }
+      },
+      "required": ["type", "location", "editor"]
+    }
+  }
 }
