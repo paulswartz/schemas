@@ -125,7 +125,7 @@
     "car": {
       "type": "object",
       "required": [
-        "nbr",
+        "carNumber",
         "type",
         "flags",
         "maintenancePasswordVersion",
@@ -138,7 +138,7 @@
         "wifiState"
       ],
       "properties": {
-        "nbr": { "$ref": "#/$defs/carNumber" },
+        "carNumber": { "$ref": "#/$defs/carNumber" },
         "type": { "type": "string", "enum": ["UNKNOWN", "CAB", "NON_CAB"] },
         "flags": { "$ref": "#/$defs/carFlags" },
         "maintenancePasswordVersion": {
@@ -283,16 +283,16 @@
         "transmissionDt",
         "flags",
         "commId",
-        "commCarNbr",
-        "activeCarNbr",
-        "primaryCarNbr",
-        "sourceCarNbr",
-        "leadCarNbr",
+        "commCarNumber",
+        "activeCarNumber",
+        "primaryCarNumber",
+        "sourceCarNumber",
+        "leadCarNumber",
         "operationLine",
         "trainDirection",
         "numberOfCars",
-        "leaderMcuCarNbr",
-        "masterMcuCarNbrs",
+        "leaderMcuCarNumber",
+        "masterMcuCarNumbers",
         "cars",
         "speedMph",
         "latitude",
@@ -321,13 +321,13 @@
           "minimum": 1,
           "maximum": 65535
         },
-        "commCarNbr": { "$ref": "#/$defs/carNumber" },
-        "activeCarNbr": {
+        "commCarNumber": { "$ref": "#/$defs/carNumber" },
+        "activeCarNumber": {
           "oneOf": [{ "$ref": "#/$defs/carNumber" }, { "type": "null" }]
         },
-        "primaryCarNbr": { "$ref": "#/$defs/carNumber" },
-        "sourceCarNbr": { "$ref": "#/$defs/carNumber" },
-        "leadCarNbr": { "$ref": "#/$defs/carNumber" },
+        "primaryCarNumber": { "$ref": "#/$defs/carNumber" },
+        "sourceCarNumber": { "$ref": "#/$defs/carNumber" },
+        "leadCarNumber": { "$ref": "#/$defs/carNumber" },
         "operationLine": {
           "type": "string",
           "enum": ["Orange", "Red"]
@@ -336,8 +336,8 @@
           "type": "string",
           "enum": ["NONE", "LEFT", "RIGHT", "UNKNOWN"]
         },
-        "leaderMcuCarNbr": { "$ref": "#/$defs/carNumber" },
-        "masterMcuCarNbrs": {
+        "leaderMcuCarNumber": { "$ref": "#/$defs/carNumber" },
+        "masterMcuCarNumbers": {
           "type": "array",
           "maxItems": 8,
           "items": {

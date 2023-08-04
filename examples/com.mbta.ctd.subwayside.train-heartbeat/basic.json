@@ -19,19 +19,19 @@
       "critical": true
     },
     "commId": 51462,
-    "commCarNbr": "1445",
-    "activeCarNbr": "1445",
-    "primaryCarNbr": "1445",
-    "sourceCarNbr": "1445",
-    "leadCarNbr": "1445",
+    "commCarNumber": "1445",
+    "activeCarNumber": "1445",
+    "primaryCarNumber": "1445",
+    "sourceCarNumber": "1445",
+    "leadCarNumber": "1445",
     "operationLine": "Orange",
     "trainDirection": "LEFT",
     "numberOfCars": 6,
-    "leaderMcuCarNbr": "1445",
-    "masterMcuCarNbrs": ["1234", "2345"],
+    "leaderMcuCarNumber": "1445",
+    "masterMcuCarNumbers": ["1234", "2345"],
     "cars": [
       {
-        "nbr": "1445",
+        "carNumber": "1445",
         "type": "CAB",
         "flags": {
           "dead": false,
